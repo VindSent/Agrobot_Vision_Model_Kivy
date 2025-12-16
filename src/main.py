@@ -1,6 +1,3 @@
-# ======================
-# ALTIJD BOVENAAN
-# ======================
 import os
 os.environ["KIVY_NO_MTDEV"] = "1"
 
@@ -35,6 +32,7 @@ class Main(App):
         Builder.load_file(os.path.join("resources", "widgets", "counter_widget.kv"))
         Builder.load_file(os.path.join("resources", "screens", "main_screen.kv"))
         Builder.load_file(os.path.join("resources", "screens", "settings_screen.kv"))
+        Builder.load_file(os.path.join("resources", "screens", "topbar_screen.kv"))
 
         screen_manager.add_widget(MainScreen(name="main"))
         screen_manager.add_widget(SettingsScreen(name="settings"))
@@ -50,7 +48,9 @@ class Main(App):
         new_value = ops.increment(current_value)
 
         label.text = f"Counter: {new_value}"
-
+        
+    def stop(self, instance):
+        App.get_running_app().stop()
 
 if __name__ == "__main__":
     Main().run()

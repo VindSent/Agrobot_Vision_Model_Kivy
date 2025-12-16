@@ -1,9 +1,19 @@
-# amiga-app-template
+# Agrobot_Vision_Model_Kivy
 
-This repository is designed to streamline the creation of a new application deployable to the Amiga brain.
+## Installing the application
 
-For the most up-to-date documentation on using this template repository, please refer to:
+```bash
+    ./install.sh
+```
 
-[amiga.farm-ng.com - **Developing Custom Applications**](https://amiga.farm-ng.com/docs/brain/brain-apps)
+## Run the application from terminal
 
----
+```bash
+    ./entry.sh
+```
+
+## Uninstall the application
+
+```bash
+    ./uninstall.sh
+```
