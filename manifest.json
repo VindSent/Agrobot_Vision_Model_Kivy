@@ -1,10 +1,10 @@
 {
   "services": {
-    "TEMPLATE_NAME": {
-      "name": "TEMPLATE_NAME",
+    "agrobot_vision_kivy": {
+      "name": "agrobot_vision_kivy",
       "type": "app",
-      "exec_cmd": "/mnt/managed_home/farm-ng-user-YOUR_USER_HERE/YOUR-REPOSITORY-NAME/entry.sh",
-      "display_name": "APP NAME",
+      "exec_cmd": "/mnt/managed_home/farm-ng-user-vincent-van-hintum/Agrobot_Vision_Model_Kivy/entry.sh",
+      "display_name": "Agrobot Vision (Kivy)",
       "autostart": false
     }
   }

@@ -1,0 +1,10 @@
+#:kivy 2.3.1
+
+<CounterWidget@BoxLayout>:
+    orientation: "horizontal"
+    Label:
+        id: label
+        text: "Counter: 0"
+    Button:
+        text: "Increment"
+        on_release: app.handle_increment()
