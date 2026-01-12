@@ -10,7 +10,7 @@ Config.set("input", "mouse", "mouse,disable_on_activity")
 Config.set("kivy", "keyboard_mode", "systemanddock")
 
 from kivy.core.window import Window
-Window.title = "Agrobot Vision"
+Window.title = ""
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
@@ -28,11 +28,8 @@ class Main(App):
 
     def build(self):
         screen_manager = ScreenManager()
-
-        Builder.load_file(os.path.join("resources", "widgets", "counter_widget.kv"))
-        Builder.load_file(os.path.join("resources", "screens", "main_screen.kv"))
-        Builder.load_file(os.path.join("resources", "screens", "settings_screen.kv"))
-        Builder.load_file(os.path.join("resources", "screens", "topbar_screen.kv"))
+        
+        ops.load_all_kv_files()
 
         screen_manager.add_widget(MainScreen(name="main"))
         screen_manager.add_widget(SettingsScreen(name="settings"))
