@@ -1,0 +1,25 @@
+#:kivy 2.3.1
+
+<VisionScreen>:
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            text: "Vision Screen"
+            size_hint_y: 0.1
+
+        Image:
+            id: camera_view
+            allow_stretch: True
+            keep_ratio: True
+
+        BoxLayout:
+            size_hint_y: 0.15
+
+            Button:
+                text: "Detect"
+                on_press: app.run_yolo_on_current_frame()
+
+            Button:
+                text: "Back"
+                on_press: app.root.current = "main"

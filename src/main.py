@@ -1,4 +1,5 @@
 import os
+
 os.environ["KIVY_NO_MTDEV"] = "1"
 
 from kivy.config import Config
@@ -21,7 +22,7 @@ import os
 from amiga_package import ops
 from scripts.screens.main_screen import MainScreen
 from scripts.screens.settings_screen import SettingsScreen
-
+from scripts.screens.vision_screen import VisionScreen
 
 class Main(App):
     title = "Agrobot Vision"
@@ -31,10 +32,11 @@ class Main(App):
         
         ops.load_all_kv_files()
 
-        screen_manager.add_widget(MainScreen(name="main"))
-        screen_manager.add_widget(SettingsScreen(name="settings"))
+        # screen_manager.add_widget(MainScreen(name="main"))
+        # screen_manager.add_widget(SettingsScreen(name="settings"))
+        screen_manager.add_widget(VisionScreen(name="vision"))
         
-         # === YOLO TEST (tijdelijk in build) ===
+         # === YOLO TEST ===
         self.yolo_model = ops.load_yolo_model()
 
         test_image = os.path.join(
