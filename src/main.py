@@ -33,6 +33,17 @@ class Main(App):
 
         screen_manager.add_widget(MainScreen(name="main"))
         screen_manager.add_widget(SettingsScreen(name="settings"))
+        
+         # === YOLO TEST (tijdelijk in build) ===
+        self.yolo_model = ops.load_yolo_model()
+
+        test_image = "test_images/example.jpg"
+        detections = ops.run_yolo_on_image(self.yolo_model, test_image)
+
+        print("YOLO detections:")
+        for d in detections:
+            print(d)
+        # =====================================
 
         return screen_manager
 
