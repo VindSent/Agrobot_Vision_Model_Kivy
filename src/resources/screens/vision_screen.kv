@@ -1,5 +1,15 @@
 #:kivy 2.3.1
 
+<CameraImage@Image>:
+    color: 0, 0, 1, 1  # blauw als default
+
+    canvas.before:
+        Color:
+            rgba: self.color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
 <VisionScreen>:
     BoxLayout:
         orientation: "vertical"
@@ -8,7 +18,7 @@
             text: "Vision Screen"
             size_hint_y: 0.1
 
-        Image:
+        CameraImage:
             id: camera_view
             allow_stretch: True
             keep_ratio: True

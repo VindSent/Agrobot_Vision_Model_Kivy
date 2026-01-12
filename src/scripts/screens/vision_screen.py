@@ -31,4 +31,6 @@ class VisionScreen(Screen):
             bufferfmt="ubyte"
         )
 
+        self.ids.camera_view.color = (1, 1, 1, 1)
         self.ids.camera_view.texture = texture
+
