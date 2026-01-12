@@ -1,5 +1,6 @@
 import os
 from kivy.lang import Builder
+from ultralytics import YOLO
 
 def increment(value: int) -> int:
     return value + 1

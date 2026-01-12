@@ -37,7 +37,11 @@ class Main(App):
          # === YOLO TEST (tijdelijk in build) ===
         self.yolo_model = ops.load_yolo_model()
 
-        test_image = "test_images/example.jpg"
+        test_image = os.path.join(
+            os.path.dirname(__file__),
+            "test_images",
+            "example.jpg"
+        )
         detections = ops.run_yolo_on_image(self.yolo_model, test_image)
 
         print("YOLO detections:")
