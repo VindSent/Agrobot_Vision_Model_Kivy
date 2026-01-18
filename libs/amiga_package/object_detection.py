@@ -1,5 +1,4 @@
 import os
-from kivy.lang import Builder
 from ultralytics import YOLO
 
 def run_yolo_on_image(model, image_path: str):
