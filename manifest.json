@@ -1,7 +1,8 @@
 {
   "services": {
     "image_recognition": {
-      "name": "image_recognition",
+      "name": "image_recognition 2.1.2",
+      "version_comment": "Better guide for repo",
       "type": "app",
       "exec_cmd": "/mnt/managed_home/farm-ng-user-vincent-van-hintum/Agrobot_Vision_Model_Kivy/entry.sh",
       "display_name": "Image Recognition",
