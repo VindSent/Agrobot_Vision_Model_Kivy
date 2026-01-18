@@ -1,10 +1,9 @@
+import cv2
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 from kivy.graphics.texture import Texture
 
-import cv2
-
-class VisionScreen(Screen):
+class VisionWidget(Screen):
     def on_enter(self):
         self.capture = cv2.VideoCapture(0)
         Clock.schedule_interval(self.update, 1 / 30)

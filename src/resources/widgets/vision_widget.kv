@@ -1,0 +1,20 @@
+#:kivy 2.3.1
+
+<CameraImage@Image>:
+    color: 0, 0, 1, 1
+
+    canvas.before:
+        Color:
+            rgba: self.color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<VisionWidget@BoxLayout>:
+    orientation: "vertical"
+
+    CameraImage:
+        id: camera_image
+        allow_stretch: True
+        keep_ratio: True

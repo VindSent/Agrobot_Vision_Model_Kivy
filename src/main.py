@@ -15,36 +15,28 @@ Window.title = ""
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
-from kivy.lang import Builder
 
 import os
 
-from amiga_package import ops
+from amiga_package import object_detection, bootstrap
 from scripts.screens.main_screen import MainScreen
-from scripts.screens.settings_screen import SettingsScreen
-from scripts.screens.vision_screen import VisionScreen
 
 class Main(App):
-    title = "Agrobot Vision"
+    title = "Image Recognition"
 
     def build(self):
         screen_manager = ScreenManager()
         
-        ops.load_all_kv_files()
+        bootstrap.load_all_py_files()
+        bootstrap.load_all_kv_files()
 
-        # screen_manager.add_widget(MainScreen(name="main"))
-        # screen_manager.add_widget(SettingsScreen(name="settings"))
-        screen_manager.add_widget(VisionScreen(name="vision"))
+        screen_manager.add_widget(MainScreen(name="main"))
         
          # === YOLO TEST ===
-        self.yolo_model = ops.load_yolo_model()
+        self.yolo_model = object_detection.load_yolo_model()
 
-        test_image = os.path.join(
-            os.path.dirname(__file__),
-            "test_images",
-            "example.jpg"
-        )
-        detections = ops.run_yolo_on_image(self.yolo_model, test_image)
+        test_image = os.path.join(os.path.dirname(__file__),"test_images","example.jpg")
+        detections = object_detection.run_yolo_on_image(self.yolo_model, test_image)
 
         print("YOLO detections:")
         for d in detections:
@@ -52,19 +44,6 @@ class Main(App):
         # =====================================
 
         return screen_manager
-
-    def handle_increment(self):
-        main_screen = self.root.get_screen("main")
-        counter_widget = main_screen.ids["counter_widget"]
-        label = counter_widget.ids["label"]
-
-        current_value = int(label.text.split(": ")[1])
-        new_value = ops.increment(current_value)
-
-        label.text = f"Counter: {new_value}"
-        
-    def stop(self, instance):
-        App.get_running_app().stop()
 
 if __name__ == "__main__":
     Main().run()

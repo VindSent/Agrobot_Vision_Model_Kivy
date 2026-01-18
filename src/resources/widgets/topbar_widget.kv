@@ -1,25 +1,29 @@
 #:kivy 2.3.1
 
-<TopBar@BoxLayout>:
+<TopbarWidget@BoxLayout>:
     orientation: "horizontal"
     size_hint_y: None
     height: 50
     padding: 5
     spacing: 5
+
     canvas.before:
         Color:
-            rgb: 198/255, 0/255, 2/255  # hex c6002a
+            rgb: 198/255, 0/255, 2/255
         Rectangle:
             pos: self.pos
             size: self.size
+
     Label:
-        text: "Agrobot Vision"  
+        text: "Image Recognition"
         halign: "left"
         valign: "middle"
         text_size: self.size
+
     Widget:
+
     Button:
         text: "Exit"
         size_hint_x: None
         width: 100
-        on_release: app.stop()
+        on_release: root.exit_app()

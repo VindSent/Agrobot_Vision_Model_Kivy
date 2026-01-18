@@ -1,7 +1,7 @@
 """Template test module."""
 import pytest
 from amiga_package import __version__
-from amiga_package import ops
+from amiga_package import object_detection
 
 # import the internal libs and test
 
@@ -14,5 +14,5 @@ class TestDummy:
 
     @pytest.mark.parametrize("a,b,c", [(1, 2, 3), (2, 3, 5)])
     def test_add(self, a, b, c) -> None:
-        expected = ops.add(a, b)
+        expected = object_detection.add(a, b)
         assert expected == c

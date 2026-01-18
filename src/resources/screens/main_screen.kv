@@ -1,11 +1,25 @@
 #:kivy 2.3.1
 
+<CameraImage@Image>:
+    color: 0, 0, 1, 1  # blauw als default
+
+    canvas.before:
+        Color:
+            rgba: self.color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
 <MainScreen>:
     BoxLayout:
         orientation: "vertical"
-        TopBar:
-            size_hint_y: None
-            height: 50
-        CounterWidget:
-            id: counter_widget
-            size_hint_y: 1
+
+        TopbarWidget:
+            id: topbar_widget
+            allow_stretch: True
+            keep_ratio: True
+
+        VisionWidget:
+            id: vision_widget
+            allow_stretch: True
+            keep_ratio: True
