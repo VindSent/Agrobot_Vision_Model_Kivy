@@ -1,6 +1,6 @@
 # Agrobot_Vision_Model_Kivy
 
-## Installing the application
+## Installing the application (Amuiga Brain only)
 
 ```bash
     ./install.sh
@@ -12,7 +12,7 @@
     ./entry.sh
 ```
 
-## Uninstall the application
+## Uninstall the application (Amuiga Brain only)
 
 ```bash
     ./uninstall.sh
