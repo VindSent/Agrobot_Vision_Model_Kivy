@@ -43,14 +43,6 @@ class Main(App):
 
         screen_manager = ScreenManager()
         screen_manager.add_widget(MainScreen(name="main"))
-        
-        # self.yolo_model = object_detection.load_yolo_model()
-        # test_image = os.path.join(os.path.dirname(__file__),"test_images","example.jpg")
-        # detections = object_detection.run_yolo_on_image(self.yolo_model, test_image)
-
-        # print("YOLO detections:")
-        # for d in detections:
-        #     print(d)
 
         return screen_manager
 
